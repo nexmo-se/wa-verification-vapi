@@ -1,0 +1,280 @@
+.wa-verification-vapi {
+  background-image: linear-gradient(to right bottom, #861dfe, #a20be6, #b303d0, #bc0fbc, #c120aa, #ce2d9d, #d73c93, #dc4c8a, #ea6284, #f37881, #fa8f83, #fea589);
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+}
+
+.wa-verification-vapi .vonage-logo {
+  height: 100px;
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+}
+
+.wa-verification-vapi .hide {
+  display: none !important;
+}
+
+.wa-verification-vapi a {
+  color: #861DFE;
+  transition: 0.7s;
+}
+.wa-verification-vapi a:hover,
+.wa-verification-vapi a:visited {
+  color: #C13496;
+  transition: 0.7s;
+}
+
+.wa-verification-vapi label {
+  font-size: 1.1em;
+  color: #fff;
+}
+
+.wa-verification-vapi button,
+.wa-verification-vapi #login-button {
+  width: fit-content;
+  margin: 10px;
+  background-color: black;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  border: solid 2px #2e2e2e;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: 0.7s;
+  font-size: 0.9em;
+}
+.wa-verification-vapi button:hover,
+.wa-verification-vapi #login-button:hover {
+  background-color: #393939;
+  transition: 0.7s;
+}
+
+.wa-verification-vapi .loader {
+  border: 6px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 6px solid #000000;
+  width: 20px;
+  height: 20px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  margin: auto;
+}
+
+.wa-verification-vapi audio {
+  height: 30px;
+  margin: 10px 0 10px 40px;
+}
+
+.wa-verification-vapi .transcription {
+  font-style: italic;
+  line-height: 1.2;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Login */
+#login {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 15%;
+  width: 290px;
+  margin: auto;
+  background: rgba(0,0,0,0);
+  font-size: 1.1em;
+}
+
+#login label {
+  margin-bottom: 5px;
+}
+#login .sublabel {
+  margin-bottom: 20px;
+  margin-left: 10px;
+  font-size: 0.7em;
+  color: #ddd;
+  text-align: left;
+  font-style: italic;
+}
+#login input {
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: solid 1px #ddd;
+  padding: 6px 20px;
+}
+#login button {
+  /* width: fit-content; */
+  margin: 20px auto auto;
+  /* background-color: black;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  border: solid 1px #2e2e2e; */
+  padding: 10px 30px;
+  /* border-radius: 10px;
+  transition: 0.7s; */
+  font-size: 1.1em;
+}
+/* #login button:hover {
+  background-color: #393939;
+  transition: 0.7s;
+} */
+
+.wa-verification-vapi #login-button {
+  margin: auto;
+  width: 40%;
+}
+
+/* Controls & Notifications */
+#main {
+  width: 50%;
+  max-width: 50%;
+  min-width: 300px;
+  height: 60%;
+  max-height: 60%;
+  min-height: 200px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 40px 20px;
+  margin: 50px auto auto;
+  overflow: scroll;
+}
+
+/* Controls & Notifications */
+/* .wa-verification-vapi #controls {
+  width: 100%;
+  height: fit-content;
+  text-align: center;
+}
+
+.wa-verification-vapi #controls .wrapper {
+  padding: 5px 20px;
+  width: fit-content;
+  margin: auto;
+}
+
+.wa-verification-vapi #controls .red {
+  filter: invert(12%) sepia(60%) saturate(6286%) hue-rotate(356deg) brightness(128%) contrast(122%);
+}
+
+.wa-verification-vapi #controls button {
+  width: fit-content;
+  margin: 5px auto auto;
+  background-color: black;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  border: solid 1px #2e2e2e;
+  padding: 8px 20px;
+  border-radius: 10px;
+  transition: 0.7s;
+  font-size: 1.1em;
+}
+.wa-verification-vapi #controls button:hover,
+.wa-verification-vapi #controls button:focus {
+  background-color: #393939;
+  transition: 0.7s;
+}
+
+#record-on-off.disabled {
+  background-color: #757575 !important;
+  cursor: initial !important;
+}
+
+.wa-verification-vapi #controls img {
+  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(15deg) brightness(129%) contrast(100%);
+}
+
+
+.wa-verification-vapi #controls img {
+  height: 24px;
+  width: 24px;
+}*/
+
+.wa-verification-vapi #notification-message {
+  line-height: 1.5;
+}
+
+/* Modal styling */
+.wa-verification-vapi .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.wa-verification-vapi .modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+  min-width: 500px;
+  border-radius: 20px;
+}
+
+.wa-verification-vapi .modal-content .close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  transition: 0.7s;
+}
+
+.wa-verification-vapi .modal-content .close:hover,
+.wa-verification-vapi .modal-content .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.7s;
+}
+
+.wa-verification-vapi .modal-content #modal-content {
+  padding: 40px 10px 20px;
+  line-height: 1.4;
+}
+
+.wa-verification-vapi .lvn.noapp {
+  background-color: #fff;
+  color: #000;
+}
+.wa-verification-vapi .lvn.noapp:hover {
+  background-color: #d2d2d2;
+}
+
+/* Video Layouts */
+/* .wa-verification-vapi #layoutContainer.layout1 {
+  display: flex;
+  height: 100%;
+  overflow: scroll;
+  flex-wrap: wrap;
+}
+
+.wa-verification-vapi #layoutContainer.layout2 {
+  display: flex;
+  height: 100%;
+  overflow: scroll;
+  flex-wrap: wrap;
+}
+
+.wa-verification-vapi #layoutContainer.layout3 {
+  display: flex;
+  height: 100%;
+  overflow: scroll;
+} */

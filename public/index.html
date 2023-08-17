@@ -1,0 +1,51 @@
+<html>
+<head>
+  <title>WA Onboarding Verification Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link href="css/index.css" rel="stylesheet" type="text/css">
+
+  <link rel="prefetch" href="assets/vonage.png" />
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+</head>
+
+<body class="wa-verification-vapi">
+  <form id="login" action="javascript:login()">
+    <label for="apiKey">API Key</label>
+    <input type="text" id="apiKey" name="apiKey" placeholder="Your API Key" required />
+
+    <label for="apiSecret">API Secret</label>
+    <input type="password" id="apiSecret" name="apiSecret" placeholder="API Secret" required />
+
+    <label for="lvn">LVN</label>
+    <input type="number" id="lvn" name="lvn" placeholder="Your LVN (with country code)" style="margin-bottom:5px;" required />
+    <span class="sublabel">e.g. 6599998888</span>
+
+    <input type="submit" value="Login" id="login-button">
+    <!-- <button id="login-button" onclick="login()">Login</button> -->
+    <div id="login-loader" class="loader hide"></div>
+  </form>
+
+  <div id="main" class="hide">
+    <div id="notification">
+      <div id="notification-message"></div>
+    </div>
+  </div>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <!-- <span id="modal-close" class="close">&times;</span> -->
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <img class="vonage-logo" src="assets/vonage.png" />
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script rel="preload" type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

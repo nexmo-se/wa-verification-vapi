@@ -1,0 +1,17 @@
+project:
+    name: wa-verification-vapi
+instance:
+    name: dev
+    runtime: nodejs16
+    region: aws.apse1
+    application-id: INSERT_APP_ID
+    capabilities:
+    entrypoint:
+        - node
+        - index.js
+debug:
+    name: debug
+    entrypoint:
+        - nodemon
+        - --inspect
+        - index.js
