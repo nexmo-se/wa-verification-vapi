@@ -265,7 +265,6 @@ function constructWhichVonageApp({ lvn, vonageAppId }) {
 }
 
 var modalElem = document.getElementById("modal");
-// var spanElem = document.getElementById("modal-close");
 
 async function showModal(type, data) {
     console.log("showModal", type, data);
@@ -276,20 +275,6 @@ async function showModal(type, data) {
     }
     modalElem.style.display = "block";
 }
-
-// spanElem.onclick = function() {
-//     modalElem.style.display = "none";
-// }
-
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-//     if (event.target == modal) {
-//         modal.style.display = "none";
-//         archiveListPage = 1;
-//         archiveList = [];
-//         archiveListCount = 0;
-//     }
-// }
 
 // --------------------
 
@@ -325,7 +310,7 @@ socket.on('event', async (socketData) => {
         if (status === "ringing") {
             await addNotificationMessage(`Inbound call received by ${to}.`);
         } else if (status === "answered") {
-            await addNotificationMessage(`Inbound call received by ${to} has been answered. Please wait while we transcribe the call...`);
+            await addNotificationMessage(`Inbound call received by ${to} has been answered. Please wait while we transcribe the call... Note that the transcribe only works with English and if it's not showing correctly, you can refer to the recording!`);
         } else if (status === "completed") {
             await addNotificationMessage(`Inbound call received by ${to} has been completed.`);
         }
