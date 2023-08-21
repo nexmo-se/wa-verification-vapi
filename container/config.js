@@ -9,6 +9,7 @@ export default {
 
 	APPLICATION_API_CREATEAPPLICATION: "https://api.nexmo.com/v2/applications",
 	APPLICATION_API_UPDATEAPPLICATION: "https://api.nexmo.com/v2/applications/:id",
+	APPLICATION_API_DELETEAPPLICATION: "https://api.nexmo.com/v2/applications/:id",
 
 	ENDPOINT_VOICE_ANSWERPATH: "/vapi/answer",
 	ENDPOINT_VOICE_FALLBACKPATH: "/vapi/answer",

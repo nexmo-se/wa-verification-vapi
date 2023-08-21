@@ -112,7 +112,7 @@ async function registerRoom() {
         await addNotificationMessage(`Setting up room...`);
 
         let result = await axios.post(`/register/room`, {
-            apiKey, //roomUuid, 
+            apiKey, apiSecret,
             lvn: vonageLvn.msisdn,
             vonageAppId
         });

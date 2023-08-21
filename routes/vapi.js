@@ -72,7 +72,7 @@ router.post('/events', async (req, res, next) => {
 	
 	try {
 		console.log("/vapi/events req.body ::: ", JSON.stringify(req.body));
-		let { to, direction } = req.body;
+		let { to, status, direction } = req.body;
 
 		if (!to) {
 			throw(`to is required.`);
@@ -93,6 +93,11 @@ router.post('/events', async (req, res, next) => {
 		const key = `${APPLICATION_ID}_room_${room.roomUuid}`;
 		container.io.to(key).emit("event", { event: "call:event", data: req.body});
 		console.log(`/vapi/events ::: notified room ${key}`);
+
+		if (status === "completed") {
+			await container.applicationService.remove(room.apiKey, room.apiSecret, room.vonageAppId);
+			await container.roomsService.remove("roomUuid", room.roomUuid);
+		}
 
 		res.json({ status: "Ok" });
 	} catch(error) {

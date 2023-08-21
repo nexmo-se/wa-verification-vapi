@@ -37,10 +37,6 @@ router.post('/login', async (req, res, next) => {
 		}
 
 		result.appId = container.config.APPLICATION_ID;
-		// let roomUuid = container.uuidv4();
-		// result.roomUuid = roomUuid;
-
-		// await container.roomsService.addOrUpdateRoom("lvn", lvn, apiKey, roomUuid);
 
 		res.json({
 			status: "Ok",
@@ -92,13 +88,13 @@ router.post('/register/room', async (req, res, next) => {
 		// if (!apiKey || !roomUuid || !lvn || !vonageAppId) {
 		// 	throw("apiKey, roomUuid, lvn, and vonageAppId are required");
 		// }
-		let { apiKey, lvn, vonageAppId } = req.body;
-		if (!apiKey || !lvn || !vonageAppId) {
-			throw("apiKey, lvn, and vonageAppId are required");
+		let { apiKey, apiSecret, lvn, vonageAppId } = req.body;
+		if (!apiKey || !apiSecret || !lvn || !vonageAppId) {
+			throw("apiKey, apiSecret, lvn, and vonageAppId are required");
 		}
 
 		let roomUuid = container.uuidv4();
-		let room = await container.roomsService.addOrUpdateRoom("lvn", lvn, apiKey, roomUuid, lvn, vonageAppId);
+		let room = await container.roomsService.addOrUpdateRoom("lvn", lvn, apiKey, apiSecret, roomUuid, lvn, vonageAppId);
 		console.log("/register/room room ::: ", JSON.stringify(room));
 
 		res.json({
