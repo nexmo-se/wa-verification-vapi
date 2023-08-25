@@ -312,7 +312,7 @@ socket.on('event', async (socketData) => {
         } else if (status === "answered") {
             await addNotificationMessage(`Inbound call received by ${to} has been answered. Please wait while we transcribe the call... Note that the transcribe only works with English and if it's not showing correctly, you can refer to the recording!`);
         } else if (status === "completed") {
-            await addNotificationMessage(`Inbound call received by ${to} has been completed. THe Vonage application has been deleted. If you wish to retry the process, please refresh the page and reenter your details.`);
+            await addNotificationMessage(`Inbound call received by ${to} has been completed. The Vonage application has been deleted. If you wish to retry the process, please refresh the page and reenter your details.`);
         }
     } else if (event === "call:transcription") {
         const { speech: { recording_url, results } } = data;

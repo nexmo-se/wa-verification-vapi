@@ -94,11 +94,6 @@ router.post('/events', async (req, res, next) => {
 		container.io.to(key).emit("event", { event: "call:event", data: req.body});
 		console.log(`/vapi/events ::: notified room ${key}`);
 
-		if (status === "completed") {
-			await container.applicationService.remove(room.apiKey, room.apiSecret, room.vonageAppId);
-			await container.roomsService.remove("roomUuid", room.roomUuid);
-		}
-
 		res.json({ status: "Ok" });
 	} catch(error) {
 		console.error("/vapi/events ERROR ::: ", error);
@@ -187,6 +182,10 @@ router.post('/input/:roomUuid/:lvn', async (req, res, next) => {
 		const key = `${APPLICATION_ID}_room_${room.roomUuid}`;
 		container.io.to(key).emit("event", { event: "call:transcription", data: req.body});
 		console.log(`/vapi/input ::: notified room ${key}`);
+
+		await container.applicationService.remove(room.apiKey, room.apiSecret, room.vonageAppId);
+		await container.roomsService.remove("roomUuid", room.roomUuid);
+		console.log(`/vapi/input ::: room ${room.roomUuid} removed`);
 
 		res.json({ status: "Ok" });
 	} catch(error) {
